@@ -30,6 +30,16 @@ pageClass: routes
 
 <Route author="fengkx" example="/cve/search/PostgreSQL" path="/cve/search/:keyword" :paramsDesc="['关键词']" />
 
+## dbaplus 社群
+
+<Route author="nczitzk" example="/dbaplus" path="/dbaplus/:tab?" :paramsDesc="['栏目，见下表，默认为全部']">
+
+| 全部 | 数据库 | 运维 | 大数据 | 架构 | PaaS 云 | 职场生涯 | 这里有毒 |
+| ---- | ------ | ---- | ------ | ---- | ------- | -------- | -------- |
+| All  | 153    | 134  | 73     | 141  | 72      | 149      | 21       |
+
+</Route>
+
 ## deeplearning.ai
 
 ### TheBatch 周报
@@ -93,6 +103,20 @@ GitHub 官方也提供了一些 RSS:
 
 <Route author="DIYgod" example="/github/trending/daily/javascript" path="/github/trending/:since/:language?" :paramsDesc="['时间跨度, 可在 [Trending 页](https://github.com/trending/javascript?since=monthly) URL 中找到, 可选 daily weekly monthly', '语言, 可在 [Trending 页](https://github.com/trending/javascript?since=monthly) URL 中找到']" radar="1" rssbud="1"/>
 
+### Topics
+
+<Route author="queensferryme" example="/github/topics/framework" path="/github/topics/:name/:qs?" :paramsDesc="['名称，可以在相关 [Topics 页](https://github.com/topics/framework) URL 中找到', '过滤规则，形如 `l=php&o=desc&s=stars`，详见下表']" radar="1" rssbud="1">
+
+| 参数名 | 描述     | 可选值                                                                                    |
+| ------ | -------- | ----------------------------------------------------------------------------------------- |
+| `l`    | 编程语言 | 例如 `php`，可以在相关 [Topics 页](https://github.com/topics/framework?l=php) URL 中找到  |
+| `o`    | 排序方法 | `asc`（升序）<br>`desc`（降序）                                                           |
+| `s`    | 排序标准 | `stars`（按 star 数量排序）<br>`forks`（按 fork 数量排序）<br>`updated`（按更新日期排序） |
+
+例如 `/github/topics/framework/l=php&o=desc&s=stars` 会生成对应[此页面](https://github.com/topics/framework?l=php&o=desc&s=stars)的 RSS。
+
+</Route>
+
 ### 仓库 Issues
 
 <Route author="HenryQW AndreyMZ" example="/github/issue/DIYgod/RSSHub/open/RSS%20wanted" path="/github/issue/:user/:repo/:state?/:labels?" :paramsDesc="['用户名', '仓库名', 'issue 状态，可选`open`,`closed`或`all`，默认为`open`', '标签列表，以逗号分隔']" radar="1" rssbud="1"/>
@@ -153,13 +177,21 @@ GitHub 官方也提供了一些 RSS:
 
 ### Explore
 
-<Route author="imlonghao" example="/gitlab/explore/trending" path="/gitlab/explore/:type" :paramsDesc="['分类']">
+<Route author="imlonghao zoenglinghou" example="/gitlab/explore/trending" path="/gitlab/explore/:type/:host?" :paramsDesc="['分类', '服务器地址，缺省为 gitlab.com']">
 
 | Trending | Most stars | All |
 | -------- | ---------- | --- |
 | trending | starred    | all |
 
 </Route>
+
+### Releases
+
+<Route author="zoenglinghou" example="/gitlab/release/pleroma/pleroma/git.pleroma.social" path="/gitlab/release/:namespace/:project/:host?" :paramsDesc="['项目所有者或命名空间。斜杠`/`需要替代为`%2F`', '项目名称', '服务器地址，缺省为 gitlab.com']" />
+
+### Tags
+
+<Route author="zoenglinghou" example="/gitlab/tag/rluna-open-source%2Ffile-management%2Fowncloud/core/gitlab.com" path="/gitlab/tag/:namespace/:project/:host?" :paramsDesc="['项目所有者或命名空间。斜杠`/`需要替代为`%2F`', '项目名称', '服务器地址，缺省为 gitlab.com']" />
 
 ## Go 语言中文网
 
@@ -307,6 +339,12 @@ GitHub 官方也提供了一些 RSS:
 ### issues
 
 <Route author="hellodword" example="/project-zero-issues" path="/project-zero-issues" />
+
+## react
+
+### react-native
+
+<Route author="xixi" example="/react/react-native-weekly" path="/react/react-native-weekly" />
 
 ## Scala
 
@@ -665,16 +703,17 @@ GitHub 官方也提供了一些 RSS:
 
 <Route author="tonghs" example="/manong-weekly" path="/manong-weekly" />
 
+## 美团开放平台
+
+### 美团开放平台公告
+
+<Route author="youzipi" example="/meituan/open/announce" path="/meituan/open/announce"/>
+
 ## 平安银河实验室
 
 ### posts
 
 <Route author="hellodword" example="/galaxylab" path="/galaxylab">
-</Route>
-
-## 前端技术文章
-
-<Route author="laampui" example="/front-end-rss" path="/front-end-rss" :paramsDesc="['分类']">
 </Route>
 
 ## 前端艺术家 && 飞冰早报

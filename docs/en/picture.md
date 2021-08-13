@@ -8,11 +8,13 @@ pageClass: routes
 
 ### Photos
 
-<RouteEn author="nczitzk" example="/1x/latest/all" path="/1x/:type?/:caty?" :paramsDesc="['sort type, `latest` by default, or `popular` or `curators-choice`', 'picture category, `all` by default, see below']">
+<RouteEn author="nczitzk" example="/1x" path="/1x/:category?" :paramsDesc="['Category, Latest awarded by default, see below']">
 
-| Picture Category | Code          |
+| Category         | Title         |
 | ---------------- | ------------- |
-| All categories   | all           |
+| Latest awarded   | latest        |
+| Popular          | popular       |
+| Latest published | published     |
 | Abstract         | abstract      |
 | Action           | action        |
 | Animals          | animals       |
@@ -36,6 +38,22 @@ pageClass: routes
 
 </RouteEn>
 
+## BabeHub
+
+### Category
+
+<RouteEn author="nczitzk" example="/babehub" path="/babehub/:category?" :paramsDesc="['Category, see below, Home by default']">
+
+| Home | Most Viewed | Picture Archive | Video Archive |
+| - | - | - | - |
+| | most-viewed | picture | video |
+
+</RouteEn>
+
+### Search
+
+<RouteEn author="nczitzk" example="/babehub/search/babe" path="/babehub/search/:keyword?" :paramsDesc="['关键字']"/>
+
 ## Bing Wallpaper
 
 ### Daily Wallpaper
@@ -53,6 +71,32 @@ pageClass: routes
 ## Dilbert Comic Strip
 
 <RouteEn name="Daily Strip" author="Maecenas" example="/dilbert/strip" path="/dilbert/strip"/>
+
+## Elite Babes
+
+### Home
+
+<RouteEn author="nczitzk" example="/elitebabes" path="/elitebabes/:category?" :paramsDesc="['Category, see below, Home by default']"/>
+
+| Home | Hot | Popular | Recent |
+| ---- | --- | ------- | ------ |
+|      | hot | popular | recent |
+
+</Route>
+
+### Videos
+
+<RouteEn author="nczitzk" example="/elitebabes/videos" path="/elitebabes/videos/:sort?" :paramsDesc="['Sort, see below, Popular by default']" />
+
+| Popular | Recent |
+| ------- | ------ |
+| popular | recent |
+
+</Route>
+
+### Search
+
+<RouteEn author="nczitzk" example="/elitebabes/search/pose" path="/elitebabes/search/:keyword?" :paramsDesc="['Keyword']"/>
 
 ## GoComics Comic Strips
 

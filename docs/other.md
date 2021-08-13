@@ -310,6 +310,12 @@ type 为 all 时，category 参数不支持 cost 和 free
 
 </Route>
 
+## 艾瑞
+
+### 产业研究报告
+
+<Route author="brilon" example="/iresearch/report" path="/iresearch/report"/>
+
 ## 爱 Q 生活网
 
 ### 最近更新
@@ -338,12 +344,6 @@ type 为 all 时，category 参数不支持 cost 和 free
 ### 用户动态
 
 <Route author="sanmmm" example="/afdian/dynamic/@afdian" path="/afdian/dynamic/:uid?" :paramsDesc="['用户id, 用户动态页面url里可找到']"/>
-
-## 艾瑞
-
-### 产业研究报告
-
-<Route author="brilon" example="/iresearch/report" path="/iresearch/report"/>
 
 ## 百度搜索风云榜
 
@@ -391,7 +391,7 @@ type 为 all 时，category 参数不支持 cost 和 free
 
 ### 福利资源 - met.red
 
-<Route author="junfengP" example="/metred/fuli" path="/metred/fuli" />
+<Route author="junfengP queensferryme" example="/metred/fuli" path="/metred/fuli" />
 
 ## 古诗文网
 
@@ -475,37 +475,61 @@ type 为 all 时，category 参数不支持 cost 和 free
 
 ## 酷安
 
-### 图文 - 编辑精选
+### 图文
 
-<Route author="xizeyoupan" example="/coolapk/tuwen" path="/coolapk/tuwen">
+<Route author="xizeyoupan" example="/coolapk/tuwen" path="/coolapk/tuwen/:type?" :paramsDesc="['默认为hot']">
 
-::: tip
-每晚更新，更新较慢。
-:::
+| 参数名称 | 编辑精选 | 最新   |
+| -------- | -------- | ------ |
+| type     | hot      | latest |
 
 </Route>
 
-### 新鲜图文
+### 头条
 
-<Route author="xizeyoupan" example="/coolapk/tuwen-xinxian" path="/coolapk/tuwen-xinxian"/>
+<Route author="xizeyoupan" example="/coolapk/toutiao" path="/coolapk/toutiao/:type?" :paramsDesc="['默认为history']">
 
-### 看看号 - 图文 & 动态
+| 参数名称 | 历史头条 | 最新   |
+| -------- | -------- | ------ |
+| type     | history  | latest |
+
+</Route>
+
+### 看看号
 
 <Route author="xizeyoupan" example="/coolapk/dyh/1524" path="/coolapk/dyh/:dyhId" :paramsDesc="['看看号ID']">
 
 ::: tip
-仅限于采集**站内订阅**的看看号的**图文及动态**内容。看看号 ID 可在看看号界面右上分享 - 复制链接得到。
+仅限于采集**站内订阅**的看看号的内容。看看号 ID 可在看看号界面右上分享 - 复制链接得到。
 :::
 
 </Route>
 
-### 话题 - 图文 & 动态
+### 话题
 
 <Route author="xizeyoupan" example="/coolapk/huati/酷安夜话" path="/coolapk/huati/:tag" :paramsDesc="['话题名称']"/>
 
-### 用户 - 图文 & 动态
+### 用户
 
-<Route author="xizeyoupan" example="/coolapk/user/3177668/dynamic" path="/coolapk/user/:uid/dynamic" :paramsDesc="['uid,在个人界面右上分享-复制链接获取']"/>
+<Route author="xizeyoupan" example="/coolapk/user/3177668/dynamic" path="/coolapk/user/:uid/dynamic" :paramsDesc="['在个人界面右上分享-复制链接获取']"/>
+
+### 热榜
+
+<Route author="xizeyoupan" example="/coolapk/hot" path="/coolapk/hot/:type?/:period?" :paramsDesc="['默认为`jrrm`','默认为`daily`']">
+
+| 参数名称 | 今日热门 | 点赞榜 | 评论榜 | 收藏榜 | 酷图榜 |
+| -------- | -------- | ------ | ------ | ------ | ------ |
+| type     | jrrm     | dzb    | plb    | scb    | ktb    |
+
+| 参数名称 | 日榜  | 周榜   |
+| -------- | ----- | ------ |
+| period   | daily | weekly |
+
+::: tip
+今日热门没有周榜，酷图榜日榜的参数会变成周榜，周榜的参数会变成月榜。
+:::
+
+</Route>
 
 ## 快递 100
 
@@ -662,7 +686,7 @@ type 为 all 时，category 参数不支持 cost 和 free
 
 ### 郵便追跡サービス
 
-<Route author="tuzi3040" example="/japanpost/EJ123456789JP/ja" path="/japanpost/:reqCode/:locale?" :paramsDesc="['运单号', '语言，默认为`ja`']" radar="1" rssbud="1">
+<Route author="tuzi3040" example="/japanpost/track/EJ123456789JP/ja" path="/japanpost/track/:reqCode/:locale?" :paramsDesc="['运单号', '语言，默认为`ja`']" radar="1" rssbud="1">
 
 | 日语 | 英语 |
 | ---- | ---- |
@@ -703,6 +727,46 @@ type 为 all 时，category 参数不支持 cost 和 free
 ### 最新规则
 
 <Route author="nczitzk" example="/szse/rule" path="/szse/rule"/>
+
+### 创业板项目动态
+
+<Route author="nczitzk" example="/szse/projectdynamic" path="/szse/projectdynamic/:type?/:stage?/:status?" :paramsDesc="['类型，见下表，默认为IPO', '阶段，见下表，默认为全部', '状态，见下表，默认为全部']">
+
+类型
+
+| IPO | 再融资 | 重大资产重组 |
+| --- | ------ | ------------ |
+| 1   | 2      | 3            |
+
+阶段
+
+| 全部 | 受理 | 问询 | 上市委会议 |
+| ---- | ---- | ---- | ---------- |
+| 0    | 10   | 20   | 30         |
+
+| 提交注册 | 注册结果 | 中止 | 终止 |
+| -------- | -------- | ---- | ---- |
+| 35       | 40       | 50   | 60   |
+
+状态
+
+| 全部 | 新受理 | 已问询 | 通过 | 未通过 |
+| ---- | ------ | ------ | ---- | ------ |
+| 0    | 20     | 30     | 45   | 44     |
+
+| 暂缓审议 | 复审通过 | 复审不通过 | 提交注册 |
+| -------- | -------- | ---------- | -------- |
+| 46       | 56       | 54         | 60       |
+
+| 注册生效 | 不予注册 | 补充审核 | 终止注册 |
+| -------- | -------- | -------- | -------- |
+| 70       | 74       | 78       | 76       |
+
+| 中止 | 审核不通过 | 撤回 |
+| ---- | ---------- | ---- |
+| 80   | 90         | 95   |
+
+</Route>
 
 ## 守望先锋
 
@@ -753,6 +817,12 @@ type 为 all 时，category 参数不支持 cost 和 free
 ### 新闻动态
 
 <Route author="kt286" example="/tprtc/news" path="/tprtc/news"/>
+
+## 天眼查
+
+### 热门搜索
+
+<Route author="nczitzk" example="/tianyancha/hot" path="/tianyancha/hot" anticrawler="1"/>
 
 ## 无讼案例
 
@@ -824,12 +894,6 @@ type 为 all 时，category 参数不支持 cost 和 free
 
 <Route author="luyuhuang" example="/emi-nitta/news" path="/emi-nitta/news"/>
 
-## 油价
-
-### 今日油价
-
-<Route author="xyqfer" example="/oilprice/shanghai" path="/oilprice/:area" :paramsDesc="['地区拼音，详见[成品油价格网](http://oil.usd-cny.com/)']"/>
-
 ## 邮箱
 
 ### 邮件列表
@@ -837,6 +901,12 @@ type 为 all 时，category 参数不支持 cost 和 free
 > 仅支持 IMAP 协议，邮件密码等设置见 [邮件设置](/install/#其他应用配置)
 
 <Route author="kt286" example="/mail/imap/rss@rsshub.app" path="/mail/imap/:email" :paramsDesc="['邮箱账号']" selfhost="1"/>
+
+## 油价
+
+### 今日油价
+
+<Route author="xyqfer" example="/oilprice/shanghai" path="/oilprice/:area" :paramsDesc="['地区拼音，详见[成品油价格网](http://oil.usd-cny.com/)']"/>
 
 ## 源仓库
 
@@ -943,3 +1013,15 @@ type 为 all 时，category 参数不支持 cost 和 free
 ### はてな匿名ダイアリー - 人気記事アーカイブ
 
 <Route author="masakichi" example="/hatena/anonymous_diary/archive" path="/hatena/anonymous_diary/archive"/>
+
+### 澳門特別行政區政府各公共部門獎助貸學金服務平台
+
+官方網址：<https://www.bolsas.gov.mo/>
+
+<Route author="KeiLongW" example="/macau-bolsas" path="/macau-bolsas/:lang?" :paramsDesc="['語言']" >
+
+| 中文 | 葡文 |
+| ---- | ---- |
+| ch   | pt   |
+
+ </Route>
