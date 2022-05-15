@@ -72,7 +72,7 @@
     "string-width": "4.2.3",
     "supertest": "6.2.3",
     "tosource": "2.0.0-alpha.3",
-    "unified": "9.2.2",
+    "unified": "10.1.2",
     "vuepress": "1.9.7",
     "yorkie": "2.0.0"
   },
