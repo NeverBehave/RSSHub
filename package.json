@@ -158,7 +158,7 @@
         "@typescript-eslint/eslint-plugin": "7.14.1",
         "@typescript-eslint/parser": "7.14.1",
         "@vercel/nft": "0.27.2",
-        "@vitest/coverage-v8": "1.6.0",
+        "@vitest/coverage-v8": "2.0.1",
         "eslint": "8.57.0",
         "eslint-config-prettier": "9.1.0",
         "eslint-nibble": "8.1.0",
@@ -179,7 +179,7 @@
         "typescript": "5.5.2",
         "unified": "11.0.5",
         "vite-tsconfig-paths": "4.3.2",
-        "vitest": "1.6.0"
+        "vitest": "2.0.1"
     },
     "packageManager": "pnpm@9.4.0",
     "engines": {
