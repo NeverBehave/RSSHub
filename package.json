@@ -146,7 +146,7 @@
         "@types/jsrsasign": "10.5.13",
         "@types/lint-staged": "13.3.0",
         "@types/mailparser": "3.4.4",
-        "@types/markdown-it": "14.1.1",
+        "@types/markdown-it": "14.1.2",
         "@types/module-alias": "2.0.4",
         "@types/node": "20.14.9",
         "@types/sanitize-html": "2.11.0",
