@@ -178,7 +178,7 @@
         "supertest": "7.0.0",
         "typescript": "5.5.2",
         "unified": "11.0.5",
-        "vite-tsconfig-paths": "4.3.2",
+        "vite-tsconfig-paths": "6.1.1",
         "vitest": "1.6.0"
     },
     "packageManager": "pnpm@9.4.0",
